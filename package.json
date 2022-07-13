@@ -1,15 +1,12 @@
 {
-  "dependencies": {
-    "i": "^0.3.7",
-    "inquirer": "^9.0.0"
-  },
   "name": "teamprofilegenerator",
-  "description": "",
   "version": "1.0.0",
+  "description": ".",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/ivetteramos/TeamProfileGenerator/issues"
   },
-  "homepage": "https://github.com/ivetteramos/TeamProfileGenerator#readme",
-  "devDependencies": {
-    "jest": "^28.1.2"
-  }
+  "homepage": "https://github.com/ivetteramos/TeamProfileGenerator#readme"
 }
