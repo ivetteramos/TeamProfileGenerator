@@ -1,4 +1,5 @@
-const Employee = require("../lib/Employee");
+
+const Employee = require("../lib/Employee").default;
 
 test("Can instantiate Employee instance", () => {
   const e = new Employee();
@@ -46,3 +47,6 @@ test("getRole() should return \"Employee\"", () => {
   const e = new Employee("Alice", 1, "test@test.com");
   expect(e.getRole()).toBe(testValue);
 });
+
+
+// code for __test__ provided by instructor 

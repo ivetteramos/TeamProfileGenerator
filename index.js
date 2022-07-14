@@ -1,33 +1,36 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const teamGenerator = require("./teamGenerator.js");
 const theAssignedTeam = [];
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const Employee = require("./lib/Employee");
+const Employee = require("./lib/Employee").default;
 
 const questionsManager = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            message: 'What is your team managers name?',
             name: 'name',
+            message: 'What is your team managers name?',
+            
         },
         {
             type: 'input',
-            message: 'What is your employee ID?',
             name: 'ID',
+            message: 'What is your employee ID?',
+            
         },
         {
             type: "input",
+            name: "email",
             message: "What is your email address?",
-            name: "email"
+            
         },
         {
             type: "input",
+            name: "number",
             message: "What is your office number?",
-            name: "number"
+            
         },
         {
             type: 'list',
@@ -44,6 +47,37 @@ const questionsManager = () => {
             theAssignedTeam.push(engineer);
             promptTeambuild();
         })
+};
+
+const engineerQuestions = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: 'What is your name?',
+            name: 'name',
+        },
+        {
+            type: 'input',
+            message: 'What is your employee ID?',
+            name: 'ID',
+        },
+        {
+            type: "input",
+            message: "What is your email address?",
+            name: "email"
+        },
+        {
+            type: "input",
+            message: "What is your GitHub username?",
+            name: "username"
+        },
+    ])
+    .then(answers => {
+        console.log(answers);
+        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.GitHubUser);
+        theAssignedTeam.push(engineer);
+        promptTeambuild();
+    })
 };
 
 const internQuestions = () => {
@@ -81,6 +115,7 @@ const internQuestions = () => {
 const finishedTeam = () => {
 
 }
+
 
 inquirer.prompt(managerQuestions)
     .then((answers) => {

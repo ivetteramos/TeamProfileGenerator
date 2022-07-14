@@ -17,3 +17,7 @@ test("Can get school via getSchool()", () => {
   const e = new Intern("Foo", 1, "test@test.com", testValue);
   expect(e.getSchool()).toBe(testValue);
 });
+
+
+
+// code for __test__ provided by instructor 
