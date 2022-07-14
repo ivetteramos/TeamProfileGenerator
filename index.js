@@ -4,7 +4,7 @@ const theAssignedTeam = [];
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const Employee = require("./lib/Employee").default;
+const Employee = require("./lib/Employee");
 
 const questionsManager = () => {
     return inquirer.prompt([
@@ -117,7 +117,7 @@ const finishedTeam = () => {
 }
 
 
-inquirer.prompt(managerQuestions)
+inquirer.prompt(questionsManager)
     .then((answers) => {
         console.log(answers)
 
